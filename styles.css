@@ -1,0 +1,410 @@
+:root {
+  --bg: #0b1108;
+  --section: #10180d;
+  --header-a: #1a2415;
+  --header-b: #202b18;
+  --card: #1d2917;
+  --border: #2b3a22;
+  --text: #e7e1d3;
+  --muted: #d6cfbf;
+  --cta: #39d130;
+  --cta-hover: #33be2b;
+  --menu: #2a331f;
+  --menu-hover: #334126;
+  --container: 1200px;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: #8eea87;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Поддержка обеих структур:
+   1) section > .container
+   2) section.container (старый формат в части страниц) */
+main > section {
+  width: 100%;
+}
+
+main > section.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--header-a), var(--header-b));
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand img {
+  width: 138px;
+  height: auto;
+}
+
+.bonus-btn,
+.hero-cta,
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid #3ba93a;
+  background: var(--cta);
+  color: #0d1b07;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.bonus-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.bonus-btn:hover,
+.hero-cta:hover,
+.cta-button:hover {
+  background: var(--cta-hover);
+  text-decoration: none;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: var(--text);
+  background: var(--menu);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background: var(--menu-hover);
+}
+
+.menu-toggle {
+  display: none;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--menu);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.mobile-nav {
+  display: none;
+  border-top: 1px solid var(--border);
+  background: #151f11;
+}
+
+.mobile-nav.open {
+  display: block;
+}
+
+.mobile-nav .container {
+  display: grid;
+  gap: 6px;
+  padding: 10px 0 12px;
+}
+
+.mobile-nav a {
+  display: block;
+  color: var(--text);
+  background: var(--menu);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 34px 0 18px;
+}
+
+.hero-box,
+.content-box,
+.steps-box,
+.faq-box,
+.cta-box,
+.cards .card {
+  background: var(--section);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.hero-box {
+  padding: 26px;
+}
+
+h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+
+h2 {
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.25;
+  margin: 34px 0 14px;
+}
+
+h3 {
+  font-size: clamp(21px, 2.4vw, 26px);
+  margin: 0 0 10px;
+}
+
+p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+ul,
+ol {
+  margin: 0 0 14px;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.hero-cta,
+.cta-button {
+  margin-top: 10px;
+  padding: 12px 22px;
+  font-size: 17px;
+}
+
+.hero-banner {
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hero-note {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #161f13;
+  border: 1px solid var(--border);
+}
+
+.cards {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+.cards .card {
+  padding: 16px;
+}
+
+.content-box,
+.steps-box,
+.faq-box,
+.cta-box {
+  padding: 24px;
+  margin: 18px 0;
+}
+
+.faq-box details {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #182314;
+  margin-bottom: 10px;
+}
+
+.faq-box summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.related-links a {
+  background: var(--menu);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.site-footer {
+  margin-top: 28px;
+  border-top: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--header-b), var(--header-a));
+}
+
+.footer-inner {
+  padding: 24px 0 28px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.footer-brand {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-links a {
+  color: var(--text);
+  background: var(--menu);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+
+.footer-disclaimer {
+  margin-top: 12px;
+  color: #c4bda9;
+  font-size: 14px;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 980px) {
+  .header-inner {
+    grid-template-columns: auto auto 1fr auto;
+    min-height: 64px;
+    gap: 8px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  main > section.container {
+    padding: 0 12px;
+  }
+
+  .brand img {
+    width: 112px;
+  }
+
+  .bonus-btn {
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+
+  .hero-box,
+  .content-box,
+  .steps-box,
+  .faq-box,
+  .cta-box {
+    padding: 16px;
+  }
+
+  .hero {
+    padding-top: 16px;
+  }
+}
